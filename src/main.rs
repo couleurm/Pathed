@@ -30,7 +30,7 @@ fn main(){
                         // Hide the terminal window
                         ShowWindow(window, SW_HIDE);
                     }
-        }    
+        }
     }
 
     let args = Args::parse();
@@ -43,7 +43,7 @@ fn main(){
         "extras" =>         web = "https://github.com/ScoopInstaller/Extras/search?q=",
         "main" =>           web = "https://github.com/ScoopInstaller/main/search?q=",
         "utils" =>          web = "https://github.com/couleur-tweak-tips/utils/search?q=",
-        
+
         "pys" =>            web = "https://duckduckgo.com/?q=Python+",
         "ps" =>             web = "https://duckduckgo.com/?q=PowerShell+",
         "rs" =>             web = "https://duckduckgo.com/?q=Rust+",
@@ -74,7 +74,7 @@ fn main(){
         "amazonit" =>       web = "https://www.amazon.it/s?k=",
         "amazonca" =>       web = "https://www.amazon.ca/s?k=",
         "amazonuk" =>       web = "https://www.amazon.co.uk/s?k=",
-        
+
         "chocolatey" =>     web = "https://community.chocolatey.org/packages?q=",
         "namemc" =>         web = "https://mine.ly/",
         "pwshgallery" =>    web = "https://www.powershellgallery.com/packages?q=",
@@ -87,7 +87,7 @@ fn main(){
         "discordid" =>      web = "https://discord.id/?prefill=",
 
         "ys" =>             web = "https://www.youtube.com/results?search_query=",
-        
+
         "yl" => { // YouTube link
             web = "https://www.youtube.com/watch?v=";
             args.query = args.query
@@ -107,11 +107,11 @@ fn main(){
 
         "meriam-webster" => {
             web = "https://www.merriam-webster.com/dictionary/";
-            args.separator = ' '; 
+            args.separator = ' ';
         },
     };
 
-    let url = &web + &args.query.join(&args.separator.to_string());
+    let url: String = format!("{web}{query}", query = args.query.join(&args.separator.to_string()));
 
     webbrowser::open(&url)
     .expect("Failed to open URL");
