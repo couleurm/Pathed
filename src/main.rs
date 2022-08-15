@@ -94,7 +94,6 @@ fn main(){
             .replace("www.youtube.com/", "")
             .replace("shorts/", "")).collect();
         },
-        _ => {},
         "dc" => { // Discord server invite
             web = "https://discordapp.com/invite/";
             args.query = args.query.iter().map(|x| x.replace("https://discordapp.com/invite/","")
@@ -105,6 +104,7 @@ fn main(){
             web = "https://www.merriam-webster.com/dictionary/";
             args.separator = ' ';
         },
+        _ => {},
     };
 
     let url: String = format!("{web}{query}", query = args.query.join(&args.separator.to_string()));
