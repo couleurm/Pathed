@@ -33,7 +33,7 @@ fn main(){
         }
     }
 
-    let args = Args::parse();
+    let mut args = Args::parse();
 
     let mut web: &str = &args.website;
     match web {
@@ -89,19 +89,16 @@ fn main(){
 
         "yl" => { // YouTube link
             web = "https://www.youtube.com/watch?v=";
-            args.query = args.query
-                            .replace("https://","")
-                            .replace("http://","")
-                            .replace("www.youtube.com/", "")
-                            .replace("shorts/", "")
+            args.query = args.query.iter().map(|x| x.replace("https://","")
+            .replace("http://","")
+            .replace("www.youtube.com/", "")
+            .replace("shorts/", "")).collect();
         },
         _ => {},
         "dc" => { // Discord server invite
             web = "https://discordapp.com/invite/";
-            args.query = args.query
-                            .replace("https://discordapp.com/invite/","")
-                            .replace("https://discord.gg/invite/","")
-
+            args.query = args.query.iter().map(|x| x.replace("https://discordapp.com/invite/","")
+            .replace("https://discord.gg/invite/","")).collect();
         },
 
         "meriam-webster" => {
