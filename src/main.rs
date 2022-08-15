@@ -35,9 +35,8 @@ fn main(){
 
     let args = Args::parse();
 
-    let mut web = &args.website;
+    let mut web: &str = &args.website;
     match web {
-
         // Scoop, extremely opinionated >:)
         "scoop" =>          web = "https://scoop.sh/#/apps?q=",
         "extras" =>         web = "https://github.com/ScoopInstaller/Extras/search?q=",
