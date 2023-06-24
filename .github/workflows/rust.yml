@@ -1,0 +1,50 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release-win:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-2022]
+    
+    steps:
+
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+
+    - uses: msys2/setup-msys2@v2
+      with:
+        msystem: UCRT64
+        update: true
+        install: mingw-w64-clang-x86_64-clang
+
+    - name: Set LIBCLANG_PATH
+      run: echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
+
+    - name: Ship
+      shell: pwsh
+      run: cargo build --release
+
+    - name: Generate release tag
+      id: tag
+      run: echo "::set-output name=release_tag::Nightly_$(date +"%Y.%m.%d_%H-%M")"
+
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+        fail_on_unmatched_files: true
+        files: |
+          ./target/release/pathed.exe
