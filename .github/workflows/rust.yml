@@ -36,7 +36,19 @@ jobs:
 
     - name: Ship
       shell: pwsh
-      run: cargo build --release
+      run: |
+        cargo build --release
+
+        mkdir pathed
+
+        $ext=if(!$isLinux){'.exe'}
+        upx -9 --ultra-brute "./target/release/pathed$ext"
+        mv "./target/release/pathed$ext" ./pathed
+
+        $bats = Get-ChildItem ./*.bat -Exclude build.bat
+        mv ./pd.txt, $bats ./pathed
+
+        Compress-Archive ./pathed ./pathed.zip
 
     - name: Generate release tag
       id: tag
@@ -47,4 +59,4 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         fail_on_unmatched_files: true
         files: |
-          ./target/release/pathed.exe
+          ./pathed.zip

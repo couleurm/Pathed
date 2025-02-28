@@ -1,0 +1,61 @@
+# search engines
+    ys | yt | youtube; https://www.youtube.com/results?search_query=
+    g | google; https://www.google.com/search?q=
+
+    d | duckduckgo; https://duckduckgo.com/?q=
+    n | namemc2; https://mine.ly/
+    ge | genius; https://genius.com/search?q=
+    emo | emojipedia; https://emojipedia.org/search/?q=
+    so | stackoverflow; https://stackoverflow.com/search?q=
+    id | discordid; https://discord.id/?prefill=
+
+# e-commerce
+    a | amz; https://www.amazon.com/s?k=
+    amzfr; https://www.amazon.fr/s?k=
+    amzit; https://www.amazon.it/s?k=
+    amzca; https://www.amazon.ca/s?k=
+    amzuk; https://www.amazon.co.uk/s?k=
+
+# programming
+    pwshgallery; https://www.powershellgallery.com/packages?q=
+    pys; https://duckduckgo.com/?q=Python+
+    ps; https://duckduckgo.com/?q=PowerShell+
+    rs; https://duckduckgo.com/?q=Rust+
+    crates; https://crates.io/crates/
+
+# package managers
+    aur; https://aur.archlinux.org/packages?K=
+    archpkg; https://archlinux.org/packages/?q=
+    awiki; https://wiki.archlinux.org/index.php?search=
+
+    chocolatey; https://community.chocolatey.org/packages?q=
+
+    scoop | sc; https://scoop.sh/#/apps?q=
+    extras; https://github.com/ScoopInstaller/Extras/search?q=
+    main; https://github.com/ScoopInstaller/main/search?q=
+    utils; https://github.com/couleur-tweak-tips/utils/search?q=
+
+
+# social 
+    tw | twitter; https://twitter.com/search?q=
+    twu | twitteruser; https://twitter.com/
+
+    tele; https://t.me/
+
+    gh; https://github.com/search?q=
+    repo; https://github.com/
+    gist; https://gist.github.com/search?q=
+
+# misc
+wikipedia | wkpd; https://en.wikipedia.org/w/index.php?search=
+drive; https://drive.google.com/drive/search?q=
+
+
+# mail
+    gmail | gm | gm0; https://mail.google.com/mail/u/0/#search/
+    gm1; https://mail.google.com/mail/u/1/#search/
+    gm2; https://mail.google.com/mail/u/2/#search/
+    gm3; https://mail.google.com/mail/u/3/#search/
+
+MC=%APPDATA%\.minecraft
+PR=%APPDATA%\.minecraft\resourcepacks
