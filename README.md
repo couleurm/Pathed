@@ -2,11 +2,16 @@
 
 Search any website instantly only using your keyboard, like DuckDuckGo [!bangs](https://duckduckgo.com/bangs)
 
-
-
 https://github.com/user-attachments/assets/abd070dd-9d5a-4d42-87d5-ab46b935eb7a
 
-`s`, `ys`, `gn` are shortcuts I made that use Pathed to easily search anything online
+`s`, `ys`, `gn` are the name of shortcuts I made that use Pathed to easily search anything online
+
+
+`Pathed.exe -w https://www.youtube.com/results?search_query= -q`
+
+`Pathed.exe -w https://duckduckgo.com/?q= -q`
+
+`Pathed.exe -w https://genius.com/search?q= -q`
 
 # Setup
 
@@ -23,7 +28,7 @@ Save it yourself from https://github.com/couleurm/Pathed/releases/latest/downloa
 
 or
 ```PowerShell
-irm https://github.com/couleurm/Pathed/releases/latest/download/pathed.exe -out C:\pathed\pathed.exe
+irm https://github.com/couleurm/Pathed/releases/latest/download/pathed.exe -out C:\Pathed\Pathed.exe
 ```
 
 ### 3. Make shortcuts
@@ -34,12 +39,12 @@ e.g. when searching foo on youtube the url is `https://www.youtube.com/results?s
 
 1. Open the C:\Pathed folder
 2. Make a right click somewhere in the folder
-3. New -> Shortcut
+3. Ne<u>w</u> -> <u>S</u>hortcut
 4. In the location of the item, type `pathed -w https://www.youtube.com/results?search_query= -q` (-w for website and -q for query)
-5. Name the shortcut, e.g. `ys`, which stands for YouTube Search
+5. Name the shortcut, let's say.. `ys`, which stands for YouTube Search
 6. Click finish to create it
 7. Right click the shortcut and click properties
-8. Set the Run field to Minimised so you don't see the console host flashing
+8. Set the Run field to Minimised so you don't see the console host popping briefly
 
 ### 4. Extra: make folder shortcuts
 
