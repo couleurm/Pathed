@@ -13,8 +13,7 @@ struct Args {
         short,
         long,
         value_parser,
-        multiple_values = true,
-        multiple = true,
+        num_args=1..,
         default_value = " "
     )]
     query: Vec<String>,
